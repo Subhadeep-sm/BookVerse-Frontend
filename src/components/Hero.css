@@ -1,0 +1,6 @@
+.heroimg{
+    image-rendering: smooth;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimizeQuality;
+
+}
