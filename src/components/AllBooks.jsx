@@ -102,7 +102,7 @@ function AllBooks() {
                   <div
                     key={book.id}
                     ref={isLast ? lastBookElementRef : null}
-                    className="bg-[#3C3D37] text-white rounded-2xl shadow-lg p-4 cursor-pointer hover:scale-105  hover:shadow-lg hover:shadow-[#ECDFCC] transition-all duration-350 border  border-[#ECDFCC] "
+                    className="bg-[#1e201e] text-white rounded-2xl shadow-lg p-4 cursor-pointer hover:scale-105  hover:shadow-lg hover:shadow-[#ECDFCC] transition-all duration-350 border  border-[#ECDFCC] "
                     onClick={() => setSelectedBook(book)}
                   >
                     <div className="relative w-full h-80 mb-3">
