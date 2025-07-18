@@ -13,18 +13,18 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="mb-4 text-sm font-medium text-[#697565]"
         >
-          Bookverse, interactive reading with AI
+          Explore Books Like Never Before
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 40 }} //Discover Your Next Great Read With BookVerse
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
           className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
         >
-          Explore <span className="text-[#ecdfcc]">The Future</span> Of
+          Discover <span className="text-[#ecdfcc]">Your Next Great Read</span> With
           <br className="hidden md:block" />
-          Reading With <span className="text-[#697565]">Bookverse</span>
+           <span className="text-[#697565]"> Bookverse</span>
         </motion.h1>
 
         <motion.p
@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="text-base md:text-lg text-[#cfc3b3] mb-8"
         >
-          At Bookverse, we transform books into interactive adventures. Scan QR codes throughout the book and activate Booky, who comes to life as characters and experts who enrich your learning.
+          Search through millions of books, create your personalized reading list, and track your literary adventures. Filter by genre, sort by ratings, and never lose track of your next great read.
         </motion.p>
 
         <motion.a
@@ -42,7 +42,7 @@ export default function Hero() {
           whileTap={{ scale: 0.95 }}
           className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-[#697565] to-[#3c3d37] text-[#ecdfcc] font-semibold shadow-lg hover:from-[#5c6455] hover:to-[#2f2f2b] transition duration-300"
         >
-          Explore Interactive Books
+          Find Your Next Book
         </motion.a>
       </div>
 
