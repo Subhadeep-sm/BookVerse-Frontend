@@ -7,6 +7,7 @@ import { FaHome } from "react-icons/fa";
 import { RiBookShelfLine } from "react-icons/ri";
 import { MdMovieCreation } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,6 +74,9 @@ const Navbar = () => {
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
               <a href=""><RiBookShelfLine className='inline mt-[-0.3rem]'/> My Library</a>
             </li>
+            <li className="text-sm px-3 py-1 bg-[#3c3d37] hover:bg-[#697565] rounded-full transition-colors duration-300">
+              <Link to="/login">Login/Signup</Link>
+            </li>
             
           
         </ul>
@@ -117,7 +121,11 @@ const Navbar = () => {
                   <RiBookShelfLine className='inline mt-[-0.3rem]'/> My Library
                 </a>
               </li>
-              
+              <li>
+                <Link to="/login" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
+                  Login/Signup
+                </Link>
+              </li>
             
           </ul>
         </div>
