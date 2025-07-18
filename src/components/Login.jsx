@@ -8,8 +8,10 @@ import {
 
 import Navbar from './Navbar';
 
+const googleapikey= import.meta.env.VITE_GOOGLE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB0KspVLuW3NiL0gLl2DmayZwMDcQNqDdU",
+  apiKey: googleapikey,
   authDomain: "bookverse-sm.firebaseapp.com",
   projectId: "bookverse-sm",
   storageBucket: "bookverse-sm.firebasestorage.app",
