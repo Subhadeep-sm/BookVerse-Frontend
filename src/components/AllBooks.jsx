@@ -23,9 +23,23 @@ function AllBooks() {
     try {
       const { data } = await axios.get(`${API_BASE}?q=${searchTerm}&startIndex=${start}&maxResults=21`);
       if (data.items && data.items.length > 0) {
-        setBooks((prev) => append ? [...prev, ...data.items] : data.items);
-        setHasMore(true);
-      } else {
+  setBooks((prev) => {
+    const newBooks = append ? [...prev, ...data.items] : data.items;
+
+    const seen = new Set();
+    const uniqueBooks = [];
+
+    for (const book of newBooks) {
+      if (!seen.has(book.id)) {
+        seen.add(book.id);
+        uniqueBooks.push(book);
+      }
+    }
+
+    return uniqueBooks;
+  });
+  setHasMore(true);
+} else {
         if (!append) setBooks([]);
         setHasMore(false);
         setError('No results found.');
@@ -125,7 +139,9 @@ function AllBooks() {
                     <div className="flex items-center gap-1 mb-1">
                       <div className="flex text-yellow-400">
                         {Array.from({ length: 5 }, (_, i) => (
-                          <span key={i}>{i < Math.round(book.volumeInfo.averageRating || 0) ? '★' : '☆'}</span>
+                          <span
+                           key={i}
+                           >{i < Math.round(book.volumeInfo.averageRating || 0) ? '★' : '☆'}</span>
                         ))}
                       </div>
                       <span className="text-sm text-gray-300">{book.volumeInfo.averageRating || 0}</span>
@@ -151,7 +167,7 @@ function AllBooks() {
                         {book.volumeInfo.categories.map((cat) => (
                           <span
                             key={cat}
-                            className="inline-block bg-[#697565] text-[#ECDFCC] text-xs px-2 py-1 rounded-full mr-2 mt-1"
+                            className="inline-block bg-[#697565] text-[#ECDFCC] font-bold text-xs px-2 py-1 rounded-full mr-2 mt-1"
                           >
                             {cat}
                           </span>

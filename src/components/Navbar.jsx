@@ -76,7 +76,7 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-8 text-sm font-medium">
           
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
-              <a href=""><FaHome className='inline mt-[-0.3rem]'/> Home</a>
+              <Link to="/"><FaHome className='inline mt-[-0.3rem]'/> Home</Link>
             </li>
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
               <Link to="/dashboard"><FaUser className='inline mt-[-0.3rem]'/> Dashboard</Link>
@@ -117,9 +117,9 @@ const Navbar = () => {
           <ul className="space-y-3 pt-2 text-[#ecdfcc] text-sm font-medium">
            
               <li>
-                <a href="" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
+                <Link to="/" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
                   <FaHome className='inline mt-[-0.3rem]'/> Home
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/dashboard" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">

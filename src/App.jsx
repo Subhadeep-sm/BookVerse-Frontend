@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <AllBooks/>
+        <Footer/>
         
         </>
       } />
