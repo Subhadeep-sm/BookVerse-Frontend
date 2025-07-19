@@ -66,7 +66,7 @@ const Navbar = () => {
               <a href=""><FaHome className='inline mt-[-0.3rem]'/> Home</a>
             </li>
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
-              <a href=""><FaUser className='inline mt-[-0.3rem]'/> Dashboard</a>
+              <Link to="/dashboard"><FaUser className='inline mt-[-0.3rem]'/> Dashboard</Link>
             </li>
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
               <a href=""><MdMovieCreation className='inline mt-[-0.3rem]'/> Genres</a>
@@ -107,9 +107,9 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
+                <Link to="/dashboard" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
                   <FaUser className='inline mt-[-0.3rem]'/> Dashboard
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
