@@ -15,6 +15,7 @@ import {
 import { auth, db } from "../firebase";
 
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 // const googleapikey = import.meta.env.VITE_GOOGLE_API_KEY;
 
@@ -39,6 +40,8 @@ const AuthForm = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const navigate=useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -48,6 +51,7 @@ const AuthForm = () => {
         const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
         const userData = userDoc.exists() ? userDoc.data() : null;
         alert(`Welcome back, ${userData?.name || 'User'}!`);
+        navigate('/dashboard');
       } else {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await setDoc(doc(db, "users", userCredential.user.uid), {
@@ -55,6 +59,7 @@ const AuthForm = () => {
           email
         });
         alert('Account created successfully');
+        navigate('/dashboard');
       }
     } catch (err) {
       setError(err.message);

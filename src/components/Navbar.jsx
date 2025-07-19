@@ -3,6 +3,11 @@ import { Menu, X } from 'lucide-react';
 import audio1 from '../assets/audios/audio1.mp3';
 
 
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase'; // adjust path if needed
+
+
+
 import { FaHome } from "react-icons/fa";
 import { RiBookShelfLine } from "react-icons/ri";
 import { MdMovieCreation } from "react-icons/md";
@@ -15,6 +20,14 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio(audio1));
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+   useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   // Navbar hide/show on scroll
   useEffect(() => {
@@ -74,9 +87,11 @@ const Navbar = () => {
             <li className="hover:text-[#ecdfcc]/80 transition-colors duration-200">
               <a href=""><RiBookShelfLine className='inline mt-[-0.3rem]'/> My Library</a>
             </li>
-            <li className="text-sm px-3 py-1 bg-[#3c3d37] hover:bg-[#697565] rounded-full transition-colors duration-300">
-              <Link to="/login">Login/Signup</Link>
-            </li>
+            {!isLoggedIn && (
+  <li className="text-sm px-3 py-1 bg-[#3c3d37] hover:bg-[#697565] rounded-full transition-colors duration-300">
+    <Link to="/login">Login/Signup</Link>
+  </li>
+)}
             
           
         </ul>
@@ -121,11 +136,14 @@ const Navbar = () => {
                   <RiBookShelfLine className='inline mt-[-0.3rem]'/> My Library
                 </a>
               </li>
-              <li>
-                <Link to="/login" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
-                  Login/Signup
-                </Link>
-              </li>
+              {!isLoggedIn && (
+  <li>
+    <Link to="/login" onClick={() => setIsOpen(false)} className="block hover:text-[#ecdfcc]/80">
+      Login/Signup
+    </Link>
+  </li>
+)}
+
             
           </ul>
         </div>
