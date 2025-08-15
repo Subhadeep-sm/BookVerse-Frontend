@@ -14,6 +14,7 @@ const BookDetails = ({ book , onBack}) => {
               onClick={onBack}
             >
               &times;
+              {/* ← Go Back */}
             </button>
       <div className="flex flex-col md:flex-row gap-6">
         {/* Book Cover */}
