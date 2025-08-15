@@ -54,9 +54,10 @@ export default function Hero() {
       >
         {/* Ring background */}
         <div className="absolute inset-0 flex items-center justify-center z-0">
-          <div className="absolute w-[380px] h-[380px] rounded-full border-2 border-[#697565]/30 animate-pulse "></div>
+          {/* <div className="absolute w-[380px] h-[380px] rounded-full border-2 border-[#697565]/30 animate-pulse "></div>
           <div className="absolute w-[460px] h-[460px] rounded-full border-2 border-[#ecdfcc]/10 animate-pulse "></div>
-          <div className="absolute w-[500px] h-[500px] rounded-full border-2 border-[#3c3d37]/10 animate-pulse "></div>
+          <div className="absolute w-[500px] h-[500px] rounded-full border-2 border-[#3c3d37]/10 animate-pulse "></div> */}
+          
         </div>
 
         {/* Glowing gradient background */}
@@ -65,7 +66,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 z-20 pointer-events-none  rounded-2xl">
     <div className="w-full h-full rounded-2xl overflow-hidden relative">
-      <div className="absolute rounded-2xl inset-0 bg-gradient-to-b from-transparent via-[#1e201e]/40 to-[#1e201e] blur-xl h-[90%]"></div>
+      <div className="absolute rounded-4xl inset-0 bg-gradient-to-b from-transparent via-[#1e201e]/40 to-[#1e201e] blur-xl h-[90%]"></div>
     </div>
   </div>
   
@@ -79,10 +80,10 @@ export default function Hero() {
         {/* Sparkles */}
         <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
           {/* <div className="w-2 h-2 bg-[#ecdfcc] rounded-full absolute animate-ping left-[20%] top-[10%] opacity-50"></div> */}
-          <div className="w-1.5 h-1.5 bg-[#697565] rounded-full absolute animate-ping left-[60%] top-[20%] opacity-70"></div>
+          {/* <div className="w-1.5 h-1.5 bg-[#697565] rounded-full absolute animate-ping left-[60%] top-[20%] opacity-70"></div>
           <div className="w-2 h-2 bg-[#3c3d37] rounded-full absolute animate-ping left-[40%] top-[60%] opacity-50"></div>
           <div className="w-1 h-1 bg-[#ecdfcc] rounded-full absolute animate-ping left-[70%] top-[40%] opacity-75"></div>
-          <div className="w-1.5 h-1.5 bg-[#697565] rounded-full absolute animate-ping left-[30%] top-[75%] opacity-60"></div>
+          <div className="w-1.5 h-1.5 bg-[#697565] rounded-full absolute animate-ping left-[30%] top-[75%] opacity-60"></div> */}
         </div>
       </motion.div>
     </section>
